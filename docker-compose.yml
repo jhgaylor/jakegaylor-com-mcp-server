@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mcp-server:
+    image: jhgaylor/me-mcp-server:main
+    container_name: me-mcp-server
+    restart: unless-stopped
+    env_file:
+      - .env.jake-gaylor
+    environment:
+      - ENVIRONMENT=production
+      - SERVER_NAME=jake-gaylor
+    networks:
+      - proxy_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mcp-server.rule=Host(`mcp.jakegaylor.com`)"
+      - "traefik.http.routers.mcp-server.entrypoints=websecure"
+      - "traefik.http.services.mcp-server.loadbalancer.server.port=3000"
+      - "traefik.http.routers.mcp-server.tls.certresolver=lets-encrypt"
+
+networks:
+  proxy_network:
+    external: true

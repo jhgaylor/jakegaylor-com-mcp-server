@@ -5,11 +5,11 @@ services:
     image: jhgaylor/me-mcp-server:main
     container_name: me-mcp-server
     restart: unless-stopped
-    env_file:
-      - .env.jake-gaylor
     environment:
       - ENVIRONMENT=production
       - SERVER_NAME=jake-gaylor
+    volumes:
+      - ./me.yaml:/app/me.yaml
     networks:
       - proxy_network
     labels:

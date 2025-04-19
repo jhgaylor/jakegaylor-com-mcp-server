@@ -14,16 +14,16 @@ The me-mcp-server is a MCP implementation that provides AI assistants with struc
 This repository demonstrates how to deploy the me-mcp-server with:
 - Docker and Docker Compose
 - Automatic HTTPS certificates via Traefik
-- Custom environment configuration
+- YAML-based configuration
 
 ## Deployment Instructions
 
 1. Fork or clone this repository
-2. Create your environment file (`.env.your-domain`) with your personal details (see example below)
+2. Create your `me.yaml` file with your personal details (see example below)
 3. Update the `docker-compose.yml` file:
    ```yaml
-   env_file:
-     - .env.your-domain  # Point to your config file
+   volumes:
+     - ./me.yaml:/app/me.yaml  # Mount your config file
    environment:
      - SERVER_NAME=your-domain  # Your identifier
    labels:
@@ -32,23 +32,34 @@ This repository demonstrates how to deploy the me-mcp-server with:
 4. Deploy with Docker Compose: `docker-compose up -d`
 5. Point your domain to your server's IP address
 
-## Environment Configuration
+## Configuration
 
-The `.env.your-domain` file controls what information will be shared with AI assistants:
+The `me.yaml` file controls what information will be shared with AI assistants:
 
-```
-# Personal/Profile Information
-PROFILE_NAME="Your Name"
-RESUME_URL=https://yourdomain.com/resume.pdf
-LINKEDIN_URL=https://linkedin.com/in/yourusername
-WEBSITE_URL=https://yourdomain.com
-RESUME_TEXT="Your resume text here..."
+```yaml
+# Personal information
+name: Your Name
+resume_url: https://yourdomain.com/resume.pdf
+website_url: https://yourdomain.com
+linkedin_url: https://linkedin.com/in/yourusername
+github_url: https://github.com/yourusername
 
-# Job Search Parameters
-MIN_SALARY=100000
-MAX_SALARY=200000
-JOB_LOCATION=Remote
-COMPANY_TYPE=Startup
+# Optional content (can be loaded from URLs above if not specified)
+resume_text: |
+  Your resume text here...
+  
+website_text: |
+  Content from your website (optional)
+
+# Job search preferences
+job_search:
+  min_salary: 100000
+  max_salary: 200000
+  location: Remote
+  company_type: Startup
+  company_size: 1-10
+  industry: Software
+  description: "Brief description of what you're looking for"
 ```
 
 ## me-mcp-server Features
@@ -69,11 +80,12 @@ The deployed server will provide the following capabilities to AI assistants:
 
 - **TLS**: Uses Traefik with Let's Encrypt for automatic HTTPS certificate management
 - **Integration Options**: Works with existing reverse proxy setups by removing the Traefik labels and configuring your own proxy
+- **Configuration**: Uses a YAML file for easier editing and version control
 
 ## Security Considerations
 
 - Ensure your server has proper security measures in place
-- Consider the sensitivity of the information in your environment file
+- Consider the sensitivity of the information in your me.yaml file
 - Use HTTPS for all traffic (enabled by default)
 
 ## For More Information

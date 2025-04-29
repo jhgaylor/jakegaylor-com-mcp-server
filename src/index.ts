@@ -232,9 +232,11 @@ Complex AlgorithmsDeep computer science problems or algorithmic optimization
 Machine LearningWhile I can integrate ML services, I don't develop ML models
 © 2024 Jake Gaylor. All rights reserved.`;
 
+// TODO: add well known for mcp
+// TODO: maybe add an a2a card?
 function startHTTPServer() {
   // Configure the stateless handler
-  const handler = statelessHandler(
+  const mcpHandler = statelessHandler(
     makeServerFactory(serverConfig, candidateConfig)
   );
 
@@ -242,8 +244,12 @@ function startHTTPServer() {
   const app = express();
   app.use(express.json());
 
-  // Mount the handler (stateless only needs POST)
-  app.post('/mcp', handler);
+  app.get('/', (req, res) => {
+    res.send('Hello World. Let me tell you about how to teach an LLM about me.');
+  });
+
+  // Mount the mcpHandler (stateless only needs POST)
+  app.post('/mcp', mcpHandler);
 
   // Start the server
   const PORT = process.env.PORT || 3000;

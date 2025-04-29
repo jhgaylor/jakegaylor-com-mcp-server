@@ -17,6 +17,13 @@ function startHTTPServer(serverFactory: ServerFactory, port: number) {
     res.send(indexHtml);
   });
 
+  app.get('/llms.txt', (req, res) => {
+    const llmsPath = path.join(process.cwd(), 'public', 'llms.txt');
+    const llmsContent = fs.readFileSync(llmsPath, 'utf8');
+    res.setHeader('Content-Type', 'text/plain');
+    res.send(llmsContent);
+  });
+
   app.post('/mcp', statelessHandler(serverFactory));
 
   // Start the server

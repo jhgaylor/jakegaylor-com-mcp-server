@@ -50,8 +50,7 @@
                 <div class="bg-gray-50 p-4 rounded-md mb-6">
                     <p class="text-gray-600 mb-2">Add this configuration to your Cursor settings:</p>
                     <ol class="list-decimal pl-5 mb-4 space-y-2">
-                        <li>Open Cursor Settings (Command+, or Ctrl+,)</li>
-                        <li>Go to "AI" section</li>
+                        <li>Open Cursor Settings from the Command Palette (Command+Shift+P or Ctrl+Shift+P)</li>
                         <li>Find "MCP Servers" setting</li>
                         <li>Add the following configuration:</li>
                     </ol>
@@ -112,42 +111,38 @@
                     <p class="text-gray-500 text-sm">Save the file and restart Zed if necessary</p>
                 </div>
 
-                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Developers</h3>
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For HTTP-enabled MCP Clients</h3>
                 <div class="bg-gray-50 p-4 rounded-md mb-6">
-                    <p class="text-gray-600 mb-3">To run the server locally:</p>
+                    <p class="text-gray-600 mb-3">For clients that support direct HTTP connections:</p>
                     <ol class="list-decimal pl-5 mb-4 space-y-2">
-                        <li>Connect to the mcp server with your: <code class="bg-gray-100 px-2 py-1 rounded">https://ai.jakegaylor.com/mcp</code></li>
+                        <li>Configure your client to connect to: <code class="bg-gray-100 px-2 py-1 rounded">https://ai.jakegaylor.com/mcp</code></li>
+                        <li>Use standard MCP protocol methods to interact with the server</li>
+                        <li>No local installation required - the server is already hosted and ready to use</li>
                     </ol>
-                </div>
-
-                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Other AI Assistants</h3>
-                <div class="bg-gray-50 p-4 rounded-md mb-6">
-                    <p class="text-gray-600 mb-3">To connect programmatically via JavaScript/TypeScript:</p>
-                    <pre class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto text-sm mb-2">
-import { Client } from "@modelcontextprotocol/sdk/client/index.js";
-import { HTTPClientTransport } from "@modelcontextprotocol/sdk/client/http.js";
-
-const client = new Client({ name: "YourClientName", version: "1.0.0" });
-await client.connect(new HTTPClientTransport({ 
-  url: "https://your-deployed-url.com/mcp" // or http://localhost:3000/mcp for local
-}));
-
-// List available tools
-const tools = await client.listTools();
-console.log(tools);
-
-// Call a tool
-const result = await client.callTool({ 
-  toolName: "get_about_me", 
-  args: {} 
-});
-console.log(result);</pre>
                 </div>
                 
                 <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-8">
                     <p class="text-blue-700">
                         <strong>For AI Assistants:</strong> Connect to this MCP server to access my information.
                     </p>
+                </div>
+                
+                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">Additional Resources</h2>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-3">Additional information available via direct HTTP endpoints:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>
+                            <a href="/llms" class="text-blue-600 hover:underline" target="_blank">
+                                LLMs Information (/llms.txt)
+                            </a> - Information about my experience with Large Language Models
+                        </li>
+                        <li>
+                            Access via HTTP GET: <code class="bg-gray-100 px-2 py-1 rounded">https://ai.jakegaylor.com/llms.txt</code>
+                        </li>
+                        <li class="text-gray-500 text-sm">
+                            This endpoint returns plain text information that can be easily consumed by AI assistants or humans.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

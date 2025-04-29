@@ -120,58 +120,6 @@
                         <li>No local installation required - the server is already hosted and ready to use</li>
                     </ol>
                 </div>
-                
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-8">
-                    <p class="text-blue-700">
-                        <strong>For AI Assistants:</strong> Connect to this MCP server to access my information.
-                    </p>
-                </div>
-                
-                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">Additional Resources</h2>
-                <div class="bg-gray-50 p-4 rounded-md mb-6">
-                    <p class="text-gray-600 mb-3">Additional information available via direct HTTP endpoints:</p>
-                    <ul class="list-disc pl-5 mb-4 space-y-2">
-                        <li>
-                            <a href="/llms" class="text-blue-600 hover:underline" target="_blank">
-                                LLMs Information (/llms.txt)
-                            </a> - Information about my experience with Large Language Models
-                        </li>
-                        <li>
-                            Access via HTTP GET: <code class="bg-gray-100 px-2 py-1 rounded">https://ai.jakegaylor.com/llms.txt</code>
-                        </li>
-                        <li class="text-gray-500 text-sm">
-                            This endpoint returns plain text information that can be easily consumed by AI assistants or humans.
-                        </li>
-                    </ul>
-                </div>
-
-                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">MCP Documentation</h2>
-                
-                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">Resources</h3>
-                <div class="bg-gray-50 p-4 rounded-md mb-6">
-                    <p class="text-gray-600 mb-3">This MCP server provides the following resources:</p>
-                    <ul class="list-disc pl-5 mb-4 space-y-2">
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://resume-text</code>: Resume content as text</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://resume-url</code>: URL to the resume</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://linkedin-url</code>: LinkedIn profile URL</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://github-url</code>: GitHub profile URL</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://website-url</code>: Personal website URL</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://website-text</code>: Content from the personal website</li>
-                    </ul>
-                </div>
-                
-                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">Tools</h3>
-                <div class="bg-gray-50 p-4 rounded-md mb-6">
-                    <p class="text-gray-600 mb-3">This MCP server also provides tools that return candidate information:</p>
-                    <ul class="list-disc pl-5 mb-4 space-y-2">
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_resume_text</code>: Returns the candidate's resume content as text</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_resume_url</code>: Returns the URL to the candidate's resume</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_linkedin_url</code>: Returns the candidate's LinkedIn profile URL</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_github_url</code>: Returns the candidate's GitHub profile URL</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_website_url</code>: Returns the candidate's personal website URL</li>
-                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_website_text</code>: Returns the content from the candidate's personal website</li>
-                    </ul>
-                </div>
 
                 <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">Example Usage (TypeScript)</h3>
                 <div class="bg-gray-50 p-4 rounded-md mb-6">
@@ -215,10 +163,50 @@ async function connectToMCP() {
 connectToMCP();</pre>
                 </div>
 
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-8">
-                    <p class="text-blue-700">
-                        <strong>For AI Assistants:</strong> Connect to this MCP server to access my information.
-                    </p>
+                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">MCP Documentation</h2>
+                
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">Resources</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-3">This MCP server provides the following resources:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://resume-text</code>: Resume content as text</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://resume-url</code>: URL to the resume</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://linkedin-url</code>: LinkedIn profile URL</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://github-url</code>: GitHub profile URL</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://website-url</code>: Personal website URL</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">candidate-info://website-text</code>: Content from the personal website</li>
+                    </ul>
+                </div>
+                
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">Tools</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-3">This MCP server also provides tools that return candidate information:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_resume_text</code>: Returns the candidate's resume content as text</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_resume_url</code>: Returns the URL to the candidate's resume</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_linkedin_url</code>: Returns the candidate's LinkedIn profile URL</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_github_url</code>: Returns the candidate's GitHub profile URL</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_website_url</code>: Returns the candidate's personal website URL</li>
+                        <li><code class="bg-gray-100 px-2 py-1 rounded">get_website_text</code>: Returns the content from the candidate's personal website</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">Additional Resources</h2>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-3">Additional information available via direct HTTP endpoints:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>
+                            <a href="/llms.txt" class="text-blue-600 hover:underline" target="_blank">
+                                LLMs Information (/llms.txt)
+                            </a> - Information about my experience with Large Language Models
+                        </li>
+                        <li>
+                            Access via HTTP GET: <code class="bg-gray-100 px-2 py-1 rounded">https://ai.jakegaylor.com/llms.txt</code>
+                        </li>
+                        <li class="text-gray-500 text-sm">
+                            This endpoint returns plain text information that can be easily consumed by AI assistants or humans.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

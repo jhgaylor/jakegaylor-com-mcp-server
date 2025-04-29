@@ -1,12 +1,15 @@
 {
   "name": "@jhgaylor/me-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "nodemon --watch src --ext ts --exec 'npm run build && npm start'",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "me-mcp": "./dist/index.js"
   },
   "author": "Jake Gaylor",
   "repository": "https://github.com/jhgaylor/jakegaylor-com-mcp-server",

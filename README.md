@@ -1,9 +1,10 @@
-# Express MCP Server
+# HTTP Server with MCP Support
 
-A stateless Model Context Protocol (MCP) server built with Express and TypeScript.
+An HTTP server built with Express and TypeScript that serves both a webpage and a Model Context Protocol (MCP) endpoint.
 
 ## Features
 
+- HTTP server with both web and MCP functionality
 - Stateless MCP server implementation with modern Streamable HTTP transport
 - TypeScript for type safety
 - Express.js for HTTP handling
@@ -17,8 +18,8 @@ A stateless Model Context Protocol (MCP) server built with Express and TypeScrip
 
 ```bash
 # Clone the repository (or download)
-git clone https://github.com/your-username/sample-express-mcp-server.git
-cd sample-express-mcp-server
+git clone https://github.com/your-username/jakegaylor-com-mcp-server.git
+cd jakegaylor-com-mcp-server
 
 # Install dependencies
 npm install
@@ -42,12 +43,22 @@ npm test
 ```
 src/
   ├── index.ts                # Main application entry point
-  └── server.ts               # MCP server definition with resource, tool, and prompt
+  ├── express.ts              # HTTP server configuration
+  ├── stdio.ts                # STDIO server configuration
+  ├── config.ts               # Server configuration
+  └── types.ts                # TypeScript type definitions
 ```
 
-## Available Functionality
+## Available Endpoints
 
-This server implements a simple echo endpoint with three MCP components:
+The server supports multiple endpoints:
+
+- **Web (GET `/`)**: Serves a webpage
+- **MCP (POST `/mcp`)**: Provides MCP protocol functionality
+
+### MCP Functionality
+
+The MCP endpoint implements three MCP components:
 
 - **Resource**: `echo://{message}` - Returns the message as a resource
 - **Tool**: `echo` - Echoes the provided message back as a tool response

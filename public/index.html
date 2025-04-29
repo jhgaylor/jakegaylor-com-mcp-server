@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Gaylor - MCP Server</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Guide for connecting your AI assistant to Me</h1>
+            
+            <div class="prose max-w-none">
+                <p class="text-lg text-gray-600 mb-4">
+                    Welcome! This is an Web server that exposes this website along with an MCP (Model Context Protocol) server that lets AI assistants learn about me.
+                </p>
+                
+                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">What is MCP?</h2>
+                <p class="text-gray-600 mb-4">
+                    Model Context Protocol (MCP) is a standardized way for AI models to communicate with external
+                    services to request information or execute actions, enabling them to stay up-to-date and
+                    perform tasks beyond their training data.
+                </p>
+                
+                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">How to Use</h2>
+                <p class="text-gray-600 mb-4">
+                    AI assistants can connect to this server at the <code class="bg-gray-100 px-2 py-1 rounded">/mcp</code> endpoint
+                    to learn more about me and my work.
+                </p>
+
+                <h2 class="text-xl font-semibold text-gray-800 mt-8 mb-4">Connection Instructions</h2>
+                
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Claude</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-2">Add this configuration to your Claude config:</p>
+                    <pre class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto text-sm mb-2">
+{
+  "mcpServers": {
+    "jake-gaylor-mcp": {
+      "command": "npx",
+      "args": ["-y", "@jhgaylor/me-mcp"]
+    }
+  }
+}</pre>
+                    <p class="text-gray-500 text-sm">This will automatically install and run the MCP server locally when needed.</p>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Cursor</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-2">Add this configuration to your Cursor settings:</p>
+                    <ol class="list-decimal pl-5 mb-4 space-y-2">
+                        <li>Open Cursor Settings (Command+, or Ctrl+,)</li>
+                        <li>Go to "AI" section</li>
+                        <li>Find "MCP Servers" setting</li>
+                        <li>Add the following configuration:</li>
+                    </ol>
+                    <pre class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto text-sm mb-2">
+{
+  "mcpServers": {
+    "jake-gaylor-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jhgaylor/me-mcp"
+      ]
+    }
+  }
+}</pre>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Windsurf</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-2">Configure Windsurf to connect:</p>
+                    <ol class="list-decimal pl-5 mb-4 space-y-2">
+                        <li>Go to Windsurf Settings</li>
+                        <li>Navigate to the "AI Assistants" section</li>
+                        <li>Find "MCP Servers" option</li>
+                        <li>Add the following configuration:</li>
+                    </ol>
+                    <pre class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto text-sm mb-2">
+{
+  "mcpServers": {
+    "jake-gaylor-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jhgaylor/me-mcp"
+      ]
+    }
+  }
+}</pre>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Zed</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-2">Set up Zed to connect:</p>
+                    <ol class="list-decimal pl-5 mb-4 space-y-2">
+                        <li>Open Zed settings.json (Cmd+, or Ctrl+,)</li>
+                        <li>Add the following MCP server configuration:</li>
+                    </ol>
+                    <pre class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto text-sm mb-2">
+"context_servers": {
+  "jake-gaylor-mcp": {
+    "settings": {},
+    "command": {
+      "path": "npx",
+      "args": ["-y", "@jhgaylor/me-mcp"]
+    }
+  }
+}</pre>
+                    <p class="text-gray-500 text-sm">Save the file and restart Zed if necessary</p>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Developers</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-3">To run the server locally:</p>
+                    <ol class="list-decimal pl-5 mb-4 space-y-2">
+                        <li>Connect to the mcp server with your: <code class="bg-gray-100 px-2 py-1 rounded">https://ai.jakegaylor.com/mcp</code></li>
+                    </ol>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-700 mt-6 mb-3">For Other AI Assistants</h3>
+                <div class="bg-gray-50 p-4 rounded-md mb-6">
+                    <p class="text-gray-600 mb-3">To connect programmatically via JavaScript/TypeScript:</p>
+                    <pre class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto text-sm mb-2">
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { HTTPClientTransport } from "@modelcontextprotocol/sdk/client/http.js";
+
+const client = new Client({ name: "YourClientName", version: "1.0.0" });
+await client.connect(new HTTPClientTransport({ 
+  url: "https://your-deployed-url.com/mcp" // or http://localhost:3000/mcp for local
+}));
+
+// List available tools
+const tools = await client.listTools();
+console.log(tools);
+
+// Call a tool
+const result = await client.callTool({ 
+  toolName: "get_about_me", 
+  args: {} 
+});
+console.log(result);</pre>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-8">
+                    <p class="text-blue-700">
+                        <strong>For AI Assistants:</strong> Connect to this MCP server to access my information.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

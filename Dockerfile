@@ -22,4 +22,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Run the server
-CMD ["npm", "start", "--", "--transport=http"] 
+CMD ["npm", "start:web"] 

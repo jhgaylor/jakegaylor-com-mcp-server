@@ -1,42 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake Gaylor – MCP Server Guide</title>
-    <meta name="description" content="Comprehensive guide for connecting AI assistants to Jake Gaylor's MCP server via Claude, Cursor, Windsurf, Zed and HTTP.">
-    <meta property="og:title" content="Jake Gaylor – MCP Server Guide">
-    <meta property="og:description" content="Comprehensive guide for connecting AI assistants to Jake Gaylor's MCP server via Claude, Cursor, Windsurf, Zed and HTTP.">
-    <meta property="og:url" content="https://ai.jakegaylor.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/favicon.ico">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,line-clamp"></script>
+    <%- include('partials/head') %>
 </head>
 <body id="top" class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
-    <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-10">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <h1 class="text-2xl font-bold"><a href="#top">Jake Gaylor – MCP Server Guide</a></h1>
-            <nav aria-label="Table of Contents">
-                <ul class="hidden md:flex space-x-4 text-sm">
-                    <li><a href="#what-is-mcp" class="hover:underline">What is MCP?</a></li>
-                    <li><a href="#how-to-use" class="hover:underline">How to Use</a></li>
-                    <li><a href="#connection-instructions" class="hover:underline">Connection Instructions</a></li>
-                    <li><a href="#mcp-documentation" class="hover:underline">MCP Documentation</a></li>
-                    <li><a href="#additional-resources" class="hover:underline">Additional Resources</a></li>
-                </ul>
-                <button id="toc-toggle" class="md:hidden text-xl" aria-expanded="false" aria-controls="mobile-nav">☰</button>
-            </nav>
-        </div>
-        <div id="mobile-nav" class="md:hidden bg-white dark:bg-gray-800" hidden>
-            <ul class="px-4 pb-4 space-y-2 text-sm">
-                <li><a href="#what-is-mcp" class="block hover:underline">What is MCP?</a></li>
-                <li><a href="#how-to-use" class="block hover:underline">How to Use</a></li>
-                <li><a href="#connection-instructions" class="block hover:underline">Connection Instructions</a></li>
-                <li><a href="#mcp-documentation" class="block hover:underline">MCP Documentation</a></li>
-                <li><a href="#additional-resources" class="block hover:underline">Additional Resources</a></li>
-            </ul>
-        </div>
-    </header>
+    <%- include('partials/nav') %>
 
     <main class="container mx-auto px-4 py-8">
         <article class="prose dark:prose-dark max-w-none">
@@ -47,7 +15,7 @@
 
             <section id="how-to-use">
                 <h2>How to Use</h2>
-                <p>AI assistants can connect to this server at the <code>/mcp</code> endpoint to learn more about me and my work.</p>
+                <p>AI assistants can connect to this server at the <code>/mcp</code> endpoint to learn more about <%= name %> and their work.</p>
             </section>
 
             <section id="connection-instructions">
@@ -165,24 +133,85 @@ connectToMCP();</code></pre>
             <section id="mcp-documentation">
                 <h2>MCP Documentation</h2>
                 <h3>Resources</h3>
-                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-6">
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://resume-text</code>: Resume content as text</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://resume-url</code>: URL to the resume</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://linkedin-url</code>: LinkedIn profile URL</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://github-url</code>: GitHub profile URL</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://website-url</code>: Personal website URL</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://website-text</code>: Content from the personal website</li>
-                    </ul>
+                <div class="space-y-4">
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://resume-text</code>: Resume content as text</summary>
+                        <div class="mt-4 whitespace-pre-line"><%= resumeText %></div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://resume-url</code>: URL to the resume</summary>
+                        <div class="mt-4">
+                            <a href="<%= resumeUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= resumeUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://linkedin-url</code>: LinkedIn profile URL</summary>
+                        <div class="mt-4">
+                            <a href="<%= linkedinUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= linkedinUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://github-url</code>: GitHub profile URL</summary>
+                        <div class="mt-4">
+                            <a href="<%= githubUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= githubUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://website-url</code>: Personal website URL</summary>
+                        <div class="mt-4">
+                            <a href="<%= websiteUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= websiteUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://website-text</code>: Content from the personal website</summary>
+                        <div class="mt-4 whitespace-pre-line"><%= websiteText %></div>
+                    </details>
                 </div>
-                <h3>Tools</h3>
-                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-6">
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_resume_text</code>: Returns the candidate's resume content as text</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_resume_url</code>: Returns the URL to the candidate's resume</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_linkedin_url</code>: Returns the candidate's LinkedIn profile URL</li>
-                        <li><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_github_url</code>: Returns the candidate's GitHub profile URL</li>
-                    </ul>
+                
+                <h3 class="mt-8">Tools</h3>
+                <div class="space-y-4">
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_resume_text</code>: Returns the candidate's resume content as text</summary>
+                        <div class="mt-4 whitespace-pre-line"><%= resumeText %></div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_resume_url</code>: Returns the URL to the candidate's resume</summary>
+                        <div class="mt-4">
+                            <a href="<%= resumeUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= resumeUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_linkedin_url</code>: Returns the candidate's LinkedIn profile URL</summary>
+                        <div class="mt-4">
+                            <a href="<%= linkedinUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= linkedinUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_github_url</code>: Returns the candidate's GitHub profile URL</summary>
+                        <div class="mt-4">
+                            <a href="<%= githubUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= githubUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_website_url</code>: Returns the candidate's personal website URL</summary>
+                        <div class="mt-4">
+                            <a href="<%= websiteUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= websiteUrl %></a>
+                        </div>
+                    </details>
+                    
+                    <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                        <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_website_text</code>: Returns the content from the candidate's personal website</summary>
+                        <div class="mt-4 whitespace-pre-line"><%= websiteText %></div>
+                    </details>
                 </div>
             </section>
 
@@ -198,25 +227,7 @@ connectToMCP();</code></pre>
             </section>
         </article>
     </main>
-    <footer class="text-center p-4 text-sm text-gray-500">
-        <a href="#top" class="hover:underline">Back to top ↑</a>
-    </footer>
-    <script>
-        document.getElementById('toc-toggle').addEventListener('click', () => {
-            const nav = document.getElementById('mobile-nav');
-            const expanded = nav.hidden;
-            nav.hidden = !expanded;
-            document.getElementById('toc-toggle').setAttribute('aria-expanded', expanded);
-        });
-        document.querySelectorAll('.copy-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const code = btn.previousElementSibling.textContent;
-                navigator.clipboard.writeText(code).then(() => {
-                    btn.textContent = 'Copied!';
-                    setTimeout(() => btn.textContent = 'Copy', 2000);
-                });
-            });
-        });
-    </script>
+    
+    <%- include('partials/footer') %>
 </body>
 </html> 

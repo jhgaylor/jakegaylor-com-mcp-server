@@ -1,6 +1,7 @@
 import express from 'express';
 import { statelessHandler } from 'express-mcp-handler';
 import { ServerFactory } from './types';
+import { candidateConfig } from './config';
 import path from 'path';
 import fs from 'fs';
 
@@ -10,11 +11,22 @@ function startHTTPServer(serverFactory: ServerFactory, port: number) {
   const app = express();
   app.use(express.json());
   app.use(express.static(path.join(process.cwd(), 'public')));
+  
+  // Configure EJS as the template engine
+  app.set('view engine', 'ejs');
+  app.set('views', path.join(process.cwd(), 'views'));
 
   app.get('/', (req, res) => {
-    const indexPath = path.join(process.cwd(), 'public', 'index.html');
-    const indexHtml = fs.readFileSync(indexPath, 'utf8');
-    res.send(indexHtml);
+    // Render the EJS template with candidateConfig data
+    res.render('index', {
+      name: candidateConfig.name || 'Jake Gaylor',
+      resumeUrl: candidateConfig.resumeUrl || '',
+      linkedinUrl: candidateConfig.linkedinUrl || '',
+      githubUrl: candidateConfig.githubUrl || '',
+      websiteUrl: candidateConfig.websiteUrl || '',
+      resumeText: candidateConfig.resumeText || '',
+      websiteText: candidateConfig.websiteText || ''
+    });
   });
 
   app.get('/llms.txt', (req, res) => {

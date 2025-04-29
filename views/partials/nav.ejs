@@ -1,0 +1,24 @@
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-10">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <h1 class="text-2xl font-bold"><a href="#top"><%= name %> – MCP Server Guide</a></h1>
+        <nav aria-label="Table of Contents">
+            <ul class="hidden md:flex space-x-4 text-sm">
+                <li><a href="#what-is-mcp" class="hover:underline">What is MCP?</a></li>
+                <li><a href="#how-to-use" class="hover:underline">How to Use</a></li>
+                <li><a href="#connection-instructions" class="hover:underline">Connection Instructions</a></li>
+                <li><a href="#mcp-documentation" class="hover:underline">MCP Documentation</a></li>
+                <li><a href="#additional-resources" class="hover:underline">Additional Resources</a></li>
+            </ul>
+            <button id="toc-toggle" class="md:hidden text-xl" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+        </nav>
+    </div>
+    <div id="mobile-nav" class="md:hidden bg-white dark:bg-gray-800" hidden>
+        <ul class="px-4 pb-4 space-y-2 text-sm">
+            <li><a href="#what-is-mcp" class="block hover:underline">What is MCP?</a></li>
+            <li><a href="#how-to-use" class="block hover:underline">How to Use</a></li>
+            <li><a href="#connection-instructions" class="block hover:underline">Connection Instructions</a></li>
+            <li><a href="#mcp-documentation" class="block hover:underline">MCP Documentation</a></li>
+            <li><a href="#additional-resources" class="block hover:underline">Additional Resources</a></li>
+        </ul>
+    </div>
+</header> 

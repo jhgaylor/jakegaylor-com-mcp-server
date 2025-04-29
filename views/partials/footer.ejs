@@ -1,0 +1,21 @@
+<footer class="text-center p-4 text-sm text-gray-500">
+    <p>MCP Server for <%= name %></p>
+    <a href="#top" class="hover:underline">Back to top ↑</a>
+</footer>
+<script>
+    document.getElementById('toc-toggle').addEventListener('click', () => {
+        const nav = document.getElementById('mobile-nav');
+        const expanded = nav.hidden;
+        nav.hidden = !expanded;
+        document.getElementById('toc-toggle').setAttribute('aria-expanded', expanded);
+    });
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const code = btn.previousElementSibling.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        });
+    });
+</script> 

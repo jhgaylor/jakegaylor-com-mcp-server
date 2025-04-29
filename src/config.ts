@@ -1,6 +1,11 @@
 import { ServerConfig, CandidateConfig } from '@jhgaylor/candidate-mcp-server';
 
 const serverConfig = new ServerConfig();
+
+serverConfig.contactEmail = 'jhgaylor@gmail.com';
+serverConfig.mailgunApiKey = process.env.MAILGUN_API_KEY;
+serverConfig.mailgunDomain = 'mg.jakegaylor.com';
+
 const candidateConfig = new CandidateConfig();
 candidateConfig.name = 'Jake Gaylor';
 candidateConfig.resumeText = `About me 

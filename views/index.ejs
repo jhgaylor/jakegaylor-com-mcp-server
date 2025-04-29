@@ -16,6 +16,93 @@
             <section id="how-to-use">
                 <h2>How to Use</h2>
                 <p>AI assistants can connect to this server at the <code>/mcp</code> endpoint to learn more about me and my work.</p>
+                <p>To connect to this server with tools that do not support remote MCP servers, you can use the following command:</p>
+                <pre><code>npx -y @jhgaylor/me-mcp</code></pre>
+                <p>See <a href="#connection-instructions">below</a> for detailed connection instructions.</p>
+            </section>
+
+            <section id="for-evaluators">
+                <h2>For Talent Evaluators</h2>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-6">
+                    <p class="mb-3">I've built this MCP server to help a wide range of people evaluate whether I might be a good fit for their needs:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Recruiters:</strong> Ask about my experience, skills, and background directly.</li>
+                        <li><strong>Hiring managers:</strong> Drill into my proficiency in specific technologies. <span class="italic">Example: "What's Jake's proficiency level with React, TypeScript, and AWS?"</span></li>
+                        <li><strong>Interview coordinators:</strong> Generate tailored phone screens and take-home questions. <span class="italic">Example: "Create a phone screen for Jake around API design and testing."</span></li>
+                        <li><strong>Clients & product owners:</strong> Summarize my past projects, tech stack, and potential ROI. <span class="italic">Example: "Summarize Jake's experience building scalable microservices."</span></li>
+                        <li><strong>Conference organizers:</strong> Vet topics, domain expertise, or draft talks and bios. <span class="italic">Example: "Draft a talk abstract for Jake on serverless architectures."</span></li>
+                        <li><strong>Mentors & peers:</strong> Fetch code samples, contributions, or blog posts. <span class="italic">Example: "List Jake's top GitHub contributions in the last year."</span></li>
+                        <li><strong>Career coaches:</strong> Pull my resume, GitHub stats, and website content for assessments. <span class="italic">Example: "Generate a summary of Jake's career highlights."</span></li>
+                        <li><strong>Automated HR tools:</strong> Integrate my profile into scoring workflows or dashboards. <span class="italic">Example: "Compare Jake's skill set vs other applicants for the frontend role."</span></li>
+                        <li><strong>Anyone evaluating my fit:</strong> Use the prompt: <span class="italic">"Is Jake a good fit for my role? [paste job description]"</span></li>
+                        <li><strong>Product managers & designers:</strong> Understand how I collaborate on product vision and feature prioritization. <span class="italic">Example: "How would Jake contribute to our feature roadmap development?"</span></li>
+                        <li><strong>Learning & development teams:</strong> Discover topics I can teach or workshops I could lead. <span class="italic">Example: "What workshop could Jake deliver on TypeScript best practices?"</span></li>
+                        <li><strong>Diversity & inclusion leaders:</strong> Explore how my background aligns with D&I goals. <span class="italic">Example: "How can Jake support our organization's diversity initiatives?"</span></li>
+                        <li><strong>Startup founders & small teams:</strong> Assess my fit as a generalist in lean environments. <span class="italic">Example: "Would Jake be a good fit for a full-stack generalist role at an early-stage startup?"</span></li>
+                    </ul>
+                    <div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 rounded border-l-4 border-blue-500">
+                        <p class="text-sm">💡 <strong>Pro Tip:</strong> Connect your AI assistant to this MCP server using the instructions below, then have it analyze my experience against your specific requirements to streamline your evaluation process.</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-6">Get a Complete Candidate Assessment</h3>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-4">
+                    <p class="mb-3">Once connected, your AI assistant can provide a thorough evaluation of my candidacy:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="border border-gray-200 dark:border-gray-700 rounded-md p-3">
+                            <h4 class="font-bold mb-2">Skills Assessment</h4>
+                            <p class="text-sm">Ask about specific technologies or skills mentioned in your job description and get an analysis of my experience level with each.</p>
+                            <p class="text-xs mt-2 italic">Example: "What is Jake's proficiency level with React, TypeScript, and AWS?"</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-700 rounded-md p-3">
+                            <h4 class="font-bold mb-2">Business Impact</h4>
+                            <p class="text-sm">Understand how my background could translate to impact in your organization based on my previous roles and accomplishments.</p>
+                            <p class="text-xs mt-2 italic">Example: "How could Jake contribute to our e-commerce platform optimization efforts?"</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-700 rounded-md p-3">
+                            <h4 class="font-bold mb-2">Strengths & Growth Areas</h4>
+                            <p class="text-sm">Get insights into which aspects of your role I would likely excel at, and where I might need support or development.</p>
+                            <p class="text-xs mt-2 italic">Example: "Based on our senior developer role, what are Jake's strengths and potential growth areas?"</p>
+                        </div>
+                        
+                        <div class="border border-gray-200 dark:border-gray-700 rounded-md p-3">
+                            <h4 class="font-bold mb-2">Phone Screen Generator</h4>
+                            <p class="text-sm">Generate customized interview questions that focus on the specific unknowns or areas you want to explore further.</p>
+                            <p class="text-xs mt-2 italic">Example: "Create a phone screen for Jake focused on system design and leadership skills."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-6">Take Action</h3>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
+                    <p class="mb-3">If you're using the hosted version at <code>ai.jakegaylor.com/mcp</code>, you can have your AI assistant contact me directly:</p>
+                    
+                    <p class="text-sm">The assistant can compose an email based on your role and my qualifications, which you can review and send. This helps create a personalized outreach that highlights the specific reasons why your opportunity might align with my background.</p>
+                    <p class="text-xs italic">Example: Ask your assistant: "Please draft an email to Jake about our [position name] role and why he might be a good fit."</p>
+                </div>
+                <h3 class="mt-6">Technical Deep Dive</h3>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-4">
+                    <p class="mb-3">Walk through core technologies in your stack, explore my project work via the GitHub MCP server, and discuss design trade-offs:</p>
+                    <p class="text-xs italic">Example: "Give me a code walk-through of Jake's use of AWS Lambda in his last project and ask him to explain the trade-offs."</p>
+                </div>
+                <h3 class="mt-6">Onboarding & Ramp Roadmap</h3>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-4">
+                    <p class="mb-3">Generate a 30-60-90-day plan based on my background and your team's goals:</p>
+                    <p class="text-xs italic">Example: "Create a 90-day onboarding roadmap for Jake joining as a senior platform engineer."</p>
+                </div>
+                <h3 class="mt-6">Growth & Development Plan</h3>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-4">
+                    <p class="mb-3">Identify skill gaps and suggest learning paths or stretch projects:</p>
+                    <p class="text-xs italic">Example: "What areas should Jake focus on to become our next team lead, and what projects could we assign him?"</p>
+                </div>
+                <h3 class="mt-6">Reference Simulation</h3>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md mb-4">
+                    <p class="mb-3">Auto-generate reference-check questions or simulate testimonial responses:</p>
+                    <p class="text-xs italic">Example: "Create three reference-check questions about Jake's leadership and history of delivering results."</p>
+                </div>
             </section>
 
             <section id="connection-instructions">

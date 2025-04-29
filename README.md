@@ -112,3 +112,9 @@ curl -X POST http://localhost:3000/mcp \
 ## License
 
 [ISC](LICENSE) 
+
+## Regenerating the fly deploy key
+
+The token was made with:
+
+`fly tokens create deploy --name gh-jakegaylor-com-mcp-server --expiry 2160h`

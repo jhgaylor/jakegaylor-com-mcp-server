@@ -219,7 +219,12 @@ connectToMCP();</code></pre>
 
             <section id="mcp-documentation">
                 <h2>MCP Documentation</h2>
-                <h3>Resources</h3>
+                <p class="mb-4">I've defined two types of MCP capabilities here:</p>
+                <ul class="list-disc pl-5 space-y-2 mb-6">
+                    <li><strong>Resources</strong>: Static data my application exposes and that you or your assistant can fetch directly (e.g., resume text, website content).</li>
+                    <li><strong>Tools</strong>: Callable actions that AI models can invoke to retrieve information or perform tasks (e.g., <code>get_resume_text</code>, <code>get_github_url</code>).</li>
+                </ul>
+                <h3 class="mt-8">Resources</h3>
                 <div class="space-y-4">
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://resume-text</code>: Resume content as text</summary>

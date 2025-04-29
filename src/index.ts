@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import express from 'express';
 import { statelessHandler } from 'express-mcp-handler';
 import { createServer, ServerConfig, CandidateConfig } from '@jhgaylor/candidate-mcp-server';
@@ -267,7 +269,8 @@ function main() {
     console.log('Starting HTTP server...');
     startHTTPServer();
   } else {
-    console.log('Starting STDIO server...');
+    // NOTE: this must not log to stdout, otherwise it will break the MCP protocol. console.error is correct.
+    console.error('Starting STDIO server...');
     startStdioServer();
   }
 }

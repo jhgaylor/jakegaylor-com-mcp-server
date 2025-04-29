@@ -1,9 +1,9 @@
 {
   "name": "@jhgaylor/me-mcp",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && chmod +x dist/index.js",
     "start": "node dist/index.js",
     "dev": "nodemon --watch src --ext ts --exec 'npm run build && npm start'",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,7 @@
   "license": "MIT",
   "description": "A stateless Model Context Protocol (MCP) server built with Express and TypeScript that gives LLMs information about Jake Gaylor.",
   "dependencies": {
-    "@jhgaylor/candidate-mcp-server": "^1.0.4",
+    "@jhgaylor/candidate-mcp-server": "^1.1.0",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "express": "^4.18.2",
     "express-mcp-handler": "^0.0.2"

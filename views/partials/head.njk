@@ -7,4 +7,45 @@
 <meta property="og:url" content="https://ai.jakegaylor.com">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico">
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,line-clamp"></script> 
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,line-clamp"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        typography: {
+          DEFAULT: {
+            css: {
+              a: {
+                color: '#3b82f6',
+                '&:hover': {
+                  color: '#2563eb',
+                },
+              },
+            },
+          },
+          invert: {
+            css: {
+              color: '#f3f4f6',
+              a: { 
+                color: '#60a5fa',
+                '&:hover': {
+                  color: '#93c5fd',
+                },
+              },
+              strong: { color: '#f9fafb' },
+              h1: { color: '#f9fafb' },
+              h2: { color: '#f9fafb' },
+              h3: { color: '#f9fafb' },
+              h4: { color: '#f9fafb' },
+              code: { color: '#e5e7eb' },
+              pre: { backgroundColor: '#1f2937' },
+              blockquote: { color: '#d1d5db' },
+              hr: { borderColor: '#374151' },
+            },
+          },
+        },
+      },
+    },
+  }
+</script> 

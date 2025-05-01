@@ -1,6 +1,6 @@
-<footer class="text-center p-4 text-sm text-gray-500">
+<footer class="text-center p-4 text-sm text-gray-500 dark:text-gray-300">
     <p>MCP Server for {{ name }}</p>
-    <a href="#top" class="hover:underline">Back to top ↑</a>
+    <a href="#top" class="hover:text-blue-600 dark:hover:text-blue-400 hover:underline">Back to top ↑</a>
 </footer>
 <script>
     document.getElementById('toc-toggle').addEventListener('click', () => {
@@ -17,5 +17,29 @@
                 setTimeout(() => btn.textContent = 'Copy', 2000);
             });
         });
+    });
+    
+    // Dark mode toggle functionality
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        }
+    });
+
+    // Function to reset to system preference
+    document.addEventListener('keydown', (e) => {
+        // Alt+Shift+R to reset to system preference
+        if (e.altKey && e.shiftKey && e.key === 'R') {
+            localStorage.removeItem('theme');
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
     });
 </script> 

@@ -1,6 +1,6 @@
 ---
 description: 
-globs: *.html
+globs: *.html,*.njk
 alwaysApply: false
 ---
 # Web Designer Expert

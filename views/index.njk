@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-    <%- include('partials/head') %>
+    {% include "partials/head.njk" %}
 </head>
 <body id="top" class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
-    <%- include('partials/nav') %>
+    {% include "partials/nav.njk" %}
 
     <main class="container mx-auto px-4 py-8">
         <article class="prose dark:prose-dark max-w-none">
@@ -390,40 +390,40 @@ connectToMCP();</code></pre>
                 <div class="space-y-4">
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://resume-text</code>: Resume content as text</summary>
-                        <div class="mt-4 whitespace-pre-line"><%= resumeText %></div>
+                        <div class="mt-4 whitespace-pre-line">{{ resumeText }}</div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://resume-url</code>: URL to the resume</summary>
                         <div class="mt-4">
-                            <a href="<%= resumeUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= resumeUrl %></a>
+                            <a href="{{ resumeUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ resumeUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://linkedin-url</code>: LinkedIn profile URL</summary>
                         <div class="mt-4">
-                            <a href="<%= linkedinUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= linkedinUrl %></a>
+                            <a href="{{ linkedinUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ linkedinUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://github-url</code>: GitHub profile URL</summary>
                         <div class="mt-4">
-                            <a href="<%= githubUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= githubUrl %></a>
+                            <a href="{{ githubUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ githubUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://website-url</code>: Personal website URL</summary>
                         <div class="mt-4">
-                            <a href="<%= websiteUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= websiteUrl %></a>
+                            <a href="{{ websiteUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ websiteUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">candidate-info://website-text</code>: Content from the personal website</summary>
-                        <div class="mt-4 whitespace-pre-line"><%= websiteText %></div>
+                        <div class="mt-4 whitespace-pre-line">{{ websiteText }}</div>
                     </details>
                 </div>
                 
@@ -431,46 +431,46 @@ connectToMCP();</code></pre>
                 <div class="space-y-4">
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_resume_text</code>: Returns the candidate's resume content as text</summary>
-                        <div class="mt-4 whitespace-pre-line"><%= resumeText %></div>
+                        <div class="mt-4 whitespace-pre-line">{{ resumeText }}</div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_resume_url</code>: Returns the URL to the candidate's resume</summary>
                         <div class="mt-4">
-                            <a href="<%= resumeUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= resumeUrl %></a>
+                            <a href="{{ resumeUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ resumeUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_linkedin_url</code>: Returns the candidate's LinkedIn profile URL</summary>
                         <div class="mt-4">
-                            <a href="<%= linkedinUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= linkedinUrl %></a>
+                            <a href="{{ linkedinUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ linkedinUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_github_url</code>: Returns the candidate's GitHub profile URL</summary>
                         <div class="mt-4">
-                            <a href="<%= githubUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= githubUrl %></a>
+                            <a href="{{ githubUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ githubUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_website_url</code>: Returns the candidate's personal website URL</summary>
                         <div class="mt-4">
-                            <a href="<%= websiteUrl %>" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener"><%= websiteUrl %></a>
+                            <a href="{{ websiteUrl }}" class="text-blue-600 hover:underline break-all" target="_blank" rel="noopener">{{ websiteUrl }}</a>
                         </div>
                     </details>
                     
                     <details class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md">
                         <summary class="font-semibold cursor-pointer"><code class="bg-gray-100 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">get_website_text</code>: Returns the content from the candidate's personal website</summary>
-                        <div class="mt-4 whitespace-pre-line"><%= websiteText %></div>
+                        <div class="mt-4 whitespace-pre-line">{{ websiteText }}</div>
                     </details>
                 </div>
             </section>
         </article>
     </main>
     
-    <%- include('partials/footer') %>
+    {% include "partials/footer.njk" %}
 </body>
 </html> 

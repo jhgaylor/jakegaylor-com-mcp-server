@@ -4,6 +4,7 @@ import { ServerFactory } from './types';
 import { candidateConfig } from './config';
 import path from 'path';
 import fs from 'fs';
+import nunjucks from 'nunjucks';
 
 // TODO: add well known for mcp
 // TODO: maybe add an a2a card?
@@ -12,12 +13,19 @@ function startHTTPServer(serverFactory: ServerFactory, port: number) {
   app.use(express.json());
   app.use(express.static(path.join(process.cwd(), 'public')));
   
-  // Configure EJS as the template engine
-  app.set('view engine', 'ejs');
+  // Configure Nunjucks as the template engine
+  nunjucks.configure(path.join(process.cwd(), 'views'), {
+    autoescape: true,
+    express: app,
+    watch: process.env.NODE_ENV !== 'production',
+  });
+  // Register .njk extension with Express
+  app.engine('njk', nunjucks.render);
+  app.set('view engine', 'njk');
   app.set('views', path.join(process.cwd(), 'views'));
 
   app.get('/', (req, res) => {
-    // Render the EJS template with candidateConfig data
+    // Render the Nunjucks template with candidateConfig data
     res.render('index', {
       name: candidateConfig.name || 'Jake Gaylor',
       resumeUrl: candidateConfig.resumeUrl || '',

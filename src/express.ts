@@ -1,10 +1,11 @@
 import express from 'express';
-import { statelessHandler } from 'express-mcp-handler';
+import { statefulHandlers } from 'express-mcp-handler';
 import { ServerFactory } from './types';
 import { candidateConfig } from './config';
 import path from 'path';
 import fs from 'fs';
 import nunjucks from 'nunjucks';
+import { v4 as uuidv4 } from 'uuid';
 
 // TODO: add well known for mcp
 // TODO: maybe add an a2a card?
@@ -12,7 +13,7 @@ function startHTTPServer(serverFactory: ServerFactory, port: number) {
   const app = express();
   app.use(express.json());
   app.use(express.static(path.join(process.cwd(), 'public')));
-  
+
   // Configure Nunjucks as the template engine
   nunjucks.configure(path.join(process.cwd(), 'views'), {
     autoescape: true,
@@ -44,7 +45,14 @@ function startHTTPServer(serverFactory: ServerFactory, port: number) {
     res.send(llmsContent);
   });
 
-  app.post('/mcp', statelessHandler(serverFactory));
+  const handlers = statefulHandlers(serverFactory, {
+    sessionIdGenerator: () => {
+      return uuidv4();
+    }
+  });
+  app.post('/mcp', handlers.postHandler);
+  app.get('/mcp', handlers.getHandler);
+  app.delete('/mcp', handlers.deleteHandler);
 
   // Start the server
   app.listen(port, () => {

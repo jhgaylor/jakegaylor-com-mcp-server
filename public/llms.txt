@@ -1,10 +1,11 @@
 # JAKE GAYLOR
 ## Technical Cofounder | AI/Platform Engineer
-jhgaylor@gmail.com | 720.453.3994 | https://jakegaylor.com | https://github.com/jhgaylor | https://linkedin.com/in/jhgaylor
+## Senior Software Engineer & Product Founder | End-to-End Product Development & Go-to-Market
+jhgaylor@gmail.com | 720.453.3994 | https://jakegaylor.com | https://github.com/jhgaylor | https://www.linkedin.com/in/jhgaylor/
 Remote First, Will Travel
 
 ## SUMMARY
-Nearly 15 years of experience working across the web stack with recent focus on AI engineering, product engineering, and platform engineering. Expert in Kubernetes, GitOps, cloud infrastructure, and AI agent development. Serial entrepreneur with experience running SaaS, PaaS, physical products, and restaurant businesses. Proven track record of transforming engineering teams into product-minded teams and accelerating software delivery through automation and best practices.
+15+ years building and shipping products at scale—from founding SaaS ventures to architecting AI-powered platforms. I combine deep SWE expertise with business leadership to drive product vision, go-to-market strategy, and revenue growth.
 
 ## PROFESSIONAL PHILOSOPHY
 - Shipping fast and learning fast

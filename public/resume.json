@@ -310,7 +310,7 @@
     },
     {
       "name": "MCP Working Group Contributions",
-      "description": "Active participant in Model Completion Protocol (MCP) community development",
+      "description": "Active participant in Model Context Protocol (MCP) community development",
       "highlights": [
         "Member of the MCP Hosting Working Group",
         "Developed strategies for deploying and running MCP servers at scale",
@@ -330,6 +330,44 @@
         "Created responsive mobile-first user experience"
       ],
       "url": "https://jakegaylor.com"
+    },
+    {
+      "name": "Hirebase MCP Server",
+      "description": "A Python MCP server for Hirebase.org's API",
+      "highlights": [
+        "Built a Python-based Model Context Protocol (MCP) server for searching jobs on Hirebase.org",
+        "Dockerized the service and set up GitOps CI/CD pipelines for automated builds and releases"
+      ],
+      "url": "https://github.com/jhgaylor/hirebase-mcp"
+    },
+    {
+      "name": "Express MCP Handler",
+      "description": "Package to simplify MCP handling in Express.js",
+      "highlights": [
+        "Developed Express middleware in TypeScript to streamline MCP request handling",
+        "Authored full type definitions and robust error handling for production-grade reliability",
+        "Configured CI/CD pipelines to automate code validation and package publishing"
+      ],
+      "url": "https://github.com/jhgaylor/express-mcp-handler"
+    },
+    {
+      "name": "Node Candidate MCP Server",
+      "description": "A TypeScript library to build customizable candidate MCP servers",
+      "highlights": [
+        "Authored a reusable library enabling developers to integrate their own candidate data into MCP flows",
+        "Published as an npm package for easy adoption and extension by other teams"
+      ],
+      "url": "https://github.com/jhgaylor/node-candidate-mcp-server"
+    },
+    {
+      "name": "mcp_dart",
+      "description": "Dart SDK implementation of the Model Context Protocol (MCP)",
+      "highlights": [
+        "Contributed stream based support for in-process MCP servers",
+        "Add support for running MCP servers in flutter apps",
+        "Authored Dart examples to accelerate SDK adoption"
+      ],
+      "url": "https://github.com/leehack/mcp_dart"
     }
   ]
 }

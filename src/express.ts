@@ -1,5 +1,5 @@
 import express from 'express';
-import { statefulHandlers } from 'express-mcp-handler';
+import { statefulHandlers, sseHandlers } from 'express-mcp-handler';
 import { ServerFactory } from './types';
 import { candidateConfig } from './config';
 import path from 'path';
@@ -53,6 +53,10 @@ function startHTTPServer(serverFactory: ServerFactory, port: number) {
   app.post('/mcp', handlers.postHandler);
   app.get('/mcp', handlers.getHandler);
   app.delete('/mcp', handlers.deleteHandler);
+
+  const _sseHandlers = sseHandlers(serverFactory, {});
+  app.get('/sse', _sseHandlers.getHandler);
+  app.post('/messages', _sseHandlers.postHandler);
 
   // Start the server
   app.listen(port, () => {

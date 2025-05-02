@@ -52,6 +52,14 @@ Jake Gaylor is an experienced software engineer with nearly 15 years of experien
 - Orchestration: Kubernetes, Fleet, Docker
 - Monitoring: Prometheus, CloudWatch, Sensu, PagerDuty, Logstash, Kibana, Grafana, Graphite
 
+## AI Agents & MCP Contributions
+- Created a suite of AI agents for "auto change password", "auto login", and "auto change email" 
+* Has worked with LangChain, Crewai, and built a custom homebrew agent framework.
+- Active member of the MCP Hosting Working Group, developing strategies for deploying and running MCP servers at scale.
+- Contribute to open-source projects including the Dart SDK, an Express tool for binding to MCP servers, and various MCP servers (Hirebase, Candidate Job Search, Text Extraction), as well as a GitOps tool for MCP deployments.
+- Runs publicly available MCP servers for community testing and experimentation.
+- Built a Job Search mobile app featuring an LLM-driven interface without a chat UI, using a like/pass swipe experience.
+
 ## Professional Philosophy
 Jake focuses on:
 - Shipping fast and learning fast

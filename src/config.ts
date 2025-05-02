@@ -89,6 +89,14 @@ Jenkins, Github Actions
 Orchestration: Kubernetes, Fleet, Docker 
 Monitoring: Prometheus, CloudWatch, Sensu, Pagerduty, Logstash, Kibana,
 Grafana, Graphite 
+
+AI Agents & MCP Contributions
+• Created a suite of AI agents for "auto change password", "auto login", and "auto change email" leveraging LangChain, Crewai, and a custom homebrew agent framework.
+• Active member of the MCP Hosting Working Group, developing strategies for deploying and running MCP servers at scale.
+• Contribute to open-source projects including the Dart SDK, an Express tool for binding to MCP servers, various MCP servers (Hirebase, Candidate Job Search, Text Extraction), and a GitOps tool for MCP deployments.
+• Run publicly available MCP servers for community testing and experimentation.
+• Built a mobile app with a Tinder-like LLM-driven swipe interface.
+
 Learn more at https://jakegaylor.com or https://github.com/jhgaylor`;
 
 candidateConfig.resumeUrl = 'https://jakegaylor.com/JakeGaylor_resume.pdf';
@@ -97,12 +105,21 @@ candidateConfig.githubUrl = 'https://github.com/jhgaylor';
 candidateConfig.websiteUrl = 'https://jakegaylor.com';
 candidateConfig.websiteText = `Available to Hire
 Your Next
-Technical Cofounder15+ years of experience helping companies build better tech
-organizations, launch new products, and grow with confidence.Text MeEmail
-MeDownload Resume
+Technical Cofounder
+15+ years of experience helping companies build better tech organizations, launch new products, and grow with confidence.
+
+AI Agents & MCP Contributions
+- Created and maintained AI agents for "auto change password", "auto login", and "auto change email" using LangChain, Crewai, and a custom agent framework.
+- Member of the MCP Hosting Working Group, scaling and deploying MCP servers for community and enterprise use.
+- Open-source contributions: Dart SDK, Express MCP binding tool, Hirebase, Candidate Job Search, Text Extraction MCP servers, and a GitOps deployment tool.
+- Publicly hosted MCP servers for hands-on testing and demos.
+- Developed an LLM-driven mobile app with a Tinder-style swipe interface.
+
 How I Accelerate Success
-Ship Fast, Learn FastFocus on delivering the first quantum of value quickly,
-then iterate based on real user feedback.
+Ship Fast, Learn Fast: Deliver the first quantum of value quickly, then iterate based on real user feedback.
+MVP in days, not months: Data-driven iterations and continuous feedback loops.
+Supercharge Your Teams: Provide proven tools and practices for fast, reliable delivery.
+
 MVP in days, not monthsData-driven iterationsContinuous user feedback loops
 Supercharge Your TeamsDeliver faster with proven tools and practices that
 scale across your organization.

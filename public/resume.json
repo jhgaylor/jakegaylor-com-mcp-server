@@ -1,4 +1,16 @@
 {
+  "meta": {
+    "themeOptions": {
+      "colors": {
+        "background": ["#ffffff", "#191e23"],
+        "dimmed": ["#f3f4f5", "#23282d"],
+        "primary": ["#191e23", "#fbfbfc"],
+        "secondary": ["#6c7781", "#ccd0d4"],
+        "accent": ["#46b450", "#47d153"]
+      }
+    },
+    "theme": "even"
+  },
   "basics": {
     "name": "Jake Gaylor",
     "label": "Senior Software Engineer & Product Founder | End-to-End Product Development & Go-to-Market",
@@ -299,16 +311,6 @@
   ],
   "projects": [
     {
-      "name": "AI Agent Suite",
-      "description": "Created a suite of AI agents for automated user account management",
-      "highlights": [
-        "Developed 'auto change password', 'auto login', and 'auto change email' agents",
-        "Leveraged LangChain, Crewai, and custom homebrew agent framework",
-        "Implemented production-ready autonomous agents for real-world tasks"
-      ],
-      "url": "https://github.com/jhgaylor"
-    },
-    {
       "name": "MCP Working Group Contributions",
       "description": "Active participant in Model Context Protocol (MCP) community development",
       "highlights": [
@@ -322,14 +324,13 @@
       "url": "https://github.com/jhgaylor"
     },
     {
-      "name": "LLM-Driven Mobile App",
+      "name": "CareerFlick LLM-Driven Mobile App",
       "description": "Developed a mobile application with a Tinder-like LLM interface",
       "highlights": [
         "Built intuitive swipe-based interface for interacting with LLMs",
         "Implemented AI-driven content generation and response system",
         "Created responsive mobile-first user experience"
-      ],
-      "url": "https://jakegaylor.com"
+      ]
     },
     {
       "name": "Hirebase MCP Server",

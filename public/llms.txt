@@ -148,3 +148,132 @@ Jake has been praised for:
 - Infrastructure migration and CI pipeline improvements at Cloaked
 - Rebuilding deployment processes at CyberGRX (now ProcessUnity)
 - Energy and tool-building skills at Magic
+
+# Core Beliefs That Shape Me
+
+## Startup Philosophy & Entrepreneurship
+
+* Create products people genuinely want rather than pursuing technically interesting but irrelevant solutions.
+* Initially do things that don't scale—personally recruiting users and providing exceptional service—to learn what actually works before automating.
+* Rapid growth and scaling define a startup, shaping approaches to funding, team composition, and product development.
+* Remain relentlessly resourceful, finding creative ways through obstacles with limited resources rather than being stopped by them.
+* Determination trumps brilliance—persist through difficulties and adjust course when necessary without giving up.
+* Solve real problems with genuine user value rather than building technology for its own sake.
+* Build for yourself first, solving problems you personally understand, which ensures at least one committed user with deep problem insights.
+* Don't scale prematurely; keep operations lean until you've proven your model and found product-market fit.
+* Maintain financial discipline even when well-funded, extending runway and forcing creativity through frugality.
+* Pivot quickly when necessary, changing direction decisively when the market provides clear signals that an idea isn't working.
+* Startups don't die with a bang but quietly, often through gradual decline and failure to adapt.
+
+## Product Development & MVP Principles
+
+* Ship the first quantum of value quickly, focusing on the minimum functionality that delivers real benefits to users.
+* Iterate continuously based on user feedback, using real input to improve products rather than relying on assumptions.
+* Focus on deeply understanding customer problems before becoming attached to specific solutions.
+* Engage with users early and often, gathering feedback to understand their needs and inform product decisions.
+* Prioritize outcomes that solve real problems over simply shipping features without measuring their impact.
+* Embrace simplicity and focus, creating products that do a few things exceptionally well rather than many things poorly.
+* Build empowered, autonomous teams that own problems to solve rather than features to build.
+* Treat discovery as a continuous process, constantly learning and testing assumptions rather than a one-time phase.
+* Differentiate between core (competitive advantage) and context (everything else), investing accordingly in each.
+* Integrate distribution strategy into product design, recognizing that great products need thoughtful go-to-market plans.
+* Focus first on delighting a small group of passionate users rather than trying to appeal to everyone immediately.
+* Ruthlessly eliminate features that don't deliver value, having the courage to cut anything not solving intended problems.
+* Make decisions based on data and evidence rather than opinions, using metrics and testing to guide direction.
+
+## Engineering Practices & Craftsmanship
+
+* Hold everyone accountable for quality, with engineers owning the reliability of their work through disciplined testing and debugging.
+* Address bugs immediately before writing new code, recognizing that unresolved issues become more expensive over time.
+* Keep designs and implementations simple, valuing straightforward solutions over clever complexity.
+* Build for current needs rather than hypothetical future scenarios, avoiding functionality that might never be needed.
+* Write code primarily for humans to read and understand, with clear structure and meaningful naming conventions.
+* Refactor continuously as part of the development process, preventing technical debt from accumulating.
+* Prioritize systems that allow asking new questions about behavior over those that merely report on predefined metrics.
+* Test early and often, using automated tests to catch issues before they reach production.
+* Create environments that protect developers' flow state, recognizing that uninterrupted focus is essential for productivity.
+* Verify that code works correctly in production with real users and data, not just in development environments.
+* Invest in the best tools available for developers, recognizing that equipment quality directly impacts productivity.
+* Implement single-step build and deployment processes to remove friction and reduce errors in workflows.
+* Integrate changes frequently and maintain fast feedback loops to catch problems early and maintain system stability.
+
+## Technical Architecture & Design
+
+* Design systems where changes can be made locally without cascading effects, allowing developers to modify components in isolation.
+* Avoid premature abstractions, waiting to see patterns emerge across multiple use cases before generalizing.
+* Recognize that all non-trivial abstractions leak implementation details and require understanding the underlying systems.
+* Design for resilience by assuming components will fail and implementing appropriate fallbacks and recovery mechanisms.
+* Build systems that enable open-ended exploration of problems without requiring code changes for every investigation.
+* Align technical architecture with how teams naturally collaborate and communicate, acknowledging Conway's Law as a critical factor in system design.
+* Measure performance empirically before optimizing, focusing efforts on actual bottlenecks rather than theoretical issues.
+* Develop deep understanding of tools and frameworks rather than treating them as black boxes.
+* Favor incremental improvement over complete rewrites, understanding the historical context and reasons behind existing design decisions before changing them.
+* Create modular, decoupled designs with well-defined interfaces that allow teams to work in parallel and replace components without breaking the system.
+
+## DevOps, Infrastructure & Scalability
+
+* Teams that build services should also run them, creating accountability and tighter feedback loops.
+* Automate repetitive tasks in testing, deployment, and infrastructure to eliminate manual work and reduce errors.
+* Deploy small, incremental changes frequently rather than making large, risky releases.
+* Instrument systems with comprehensive logging, monitoring, and tracing from the beginning to enable complete visibility.
+* Build defensive architectures that gracefully handle failures through redundancy and graceful degradation.
+* Choose proven, battle-tested technologies for critical infrastructure over newer, less stable alternatives.
+* Build for appropriate scale, growing infrastructure in step with actual demand rather than over-engineering prematurely.
+* Leverage cloud platforms and managed services for non-differentiating infrastructure to focus efforts on core product value.
+* Treat servers and deployments as replaceable resources rather than unique, hand-configured assets that require special treatment.
+* Optimize for rapid recovery from failures rather than trying to achieve perfect uptime, focusing on minimizing the impact of inevitable issues.
+* Conduct blameless post-mortems that focus on improving processes rather than finding individuals to blame for failures.
+* Continuously work to reduce toil—manual, repetitive work that provides no enduring value and scales linearly with system growth.
+
+## Team Dynamics & Culture
+
+* Organize into small, stable teams that develop shared context and communication patterns to improve productivity and quality.
+* Move scope between teams rather than moving people, preserving accumulated context and team cohesion.
+* Build diverse teams with varied backgrounds and thinking styles to consider more alternatives and catch blind spots.
+* Establish culture from day one through deliberate choices and the behaviors tolerated or discouraged.
+* Value team members with both deep expertise in one area and broader knowledge across many domains over narrow specialists.
+* Minimize context switching and protect focused work time, recognizing the high cognitive cost of multitasking.
+* Unite teams around a shared purpose and mission that guides decision-making and motivates during difficult times.
+* Practice open, honest communication with direct feedback delivered with genuine care and respect for colleagues.
+* Foster psychological safety where team members can take risks, speak up, and admit mistakes without fear of retribution.
+* Refuse to tolerate brilliant jerks, prioritizing team cohesion and collaboration over individual technical brilliance.
+* Give team members autonomy and trust, setting clear goals while allowing them to determine how to achieve those goals.
+* Lead by serving the team, removing obstacles and providing resources to enable everyone's best work.
+* Maintain a sustainable pace rather than relying on heroics, recognizing that consistent output beats burnout-inducing sprints.
+
+## AI & Emerging Technology
+
+* Use AI to enhance human capabilities rather than replace them, creating human-AI collaboration that leverages the strengths of both.
+* Experiment with emerging technologies early, maintaining a balanced approach between innovation and practicality.
+* Leverage AI tools to dramatically improve productivity, automating routine tasks to free human creativity and strategic thinking.
+* Apply AI to solve genuine problems that deliver real value rather than adding AI features merely for marketing purposes.
+* Recognize that high-quality data is the foundation of effective AI, investing in data collection and infrastructure.
+* Develop AI systems responsibly, addressing ethical implications including bias, fairness, transparency, and privacy.
+* Commit to continuous learning in the rapidly evolving AI space, staying current with research and emerging best practices.
+
+## Personal Growth & Discipline
+
+* Perseverance and passion for long-term goals matter more than natural ability, with sustained effort leading to success.
+* Practice deliberate, focused effort aimed at improving specific aspects of performance with immediate feedback rather than just accumulating experience.
+* Embrace a growth mindset, believing that abilities can be developed through dedication and hard work rather than being fixed traits.
+* Moving between engineering and management roles builds valuable perspective that strengthens effectiveness in both domains.
+* Prioritize learning opportunities over short-term success, choosing environments that maximize growth even when they involve greater risk.
+* Commit to continuous learning as a core practice, expanding skills and knowledge through reading, experimentation, and study.
+* Protect time for deep, focused work free from distractions while also allocating separate time for communication and coordination.
+* Build consistent daily habits that compound over time rather than relying on occasional bursts of productivity.
+* Maintain balance between work and personal life, recognizing that sustainable pace leads to better long-term productivity and creativity.
+* Remain humble and curious regardless of experience level, always seeking to learn from others with different perspectives and expertise.
+
+## Remote Work & Exceptional Coworker Principles
+
+* Over-Communicate Intentionally. I share status, context, and decisions proactively. In remote settings, what's unsaid is easily missed—so I err on the side of more clarity, not less.
+* Default to Asynchronous First. I value async communication that respects time zones and "maker's schedule," while ensuring thoughtful documentation. I recognize remote work allows flexible schedules—people do their best work at different times.
+* Be Reliably Responsive. I commit to timely responses during overlap hours, building trust and keeping projects moving, even if it's just "got it, will circle back."
+* Own Your Calendar & Respect Others'. I protect focused work blocks while honoring others' no-meeting zones. I schedule "office hours" for collaboration and leave other times for deep work.
+* Write It Down. I document decisions, discussions, and processes in shared spaces, turning ephemeral conversations into searchable knowledge. I keep READMEs, design docs, and wikis updated so anyone can onboard without chasing people.
+* Craft Clear Communications. In remote work, writing is your voice. I tailor messages to their audience, ensuring readers grasp intent, context, and actions regardless if they're engineers, designers, product, or executives.
+* Be Proactively Engaged. I publish work-in-progress early for feedback, speak up when seeing gaps or opportunities, and provide rich context with every ask. In video calls, I'm fully present with camera on when appropriate.
+* Build Team Connection. I invest in virtual relationships through casual chats and public recognition of achievements. I run efficient meetings with clear agendas, timeboxes, and action items to respect everyone's time.
+* Trust & Empathy First. I operate from trust, focusing on outcomes rather than hours. I'm mindful of tone in text, using clear phrasing to convey warmth and respect. I default to remote-friendly practices so all participants have equal access and voice.
+* Continuously Improve Remote Practices. I solicit feedback on remote workflows and iterate on them, treating remote processes as living systems to be refined.
+

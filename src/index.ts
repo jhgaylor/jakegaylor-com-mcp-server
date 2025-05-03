@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 
 import { createServer } from '@jhgaylor/candidate-mcp-server';
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-
-import { serverConfig, candidateConfig } from "./config";
+import { getServerConfig, getCandidateConfig } from "./config";
 import { startHTTPServer } from "./express";
 import { startStdioServer } from "./stdio";
 
-function main() {
+async function main() {
   const args = process.argv.slice(2);
   const transportArg = args.find(arg => arg.startsWith('--transport='));
   const selectedTransport = transportArg ? transportArg.split('=')[1] : 'stdio';
+
+  const serverConfig = getServerConfig();
+  const candidateConfig = await getCandidateConfig();
 
   const serverFactory = () => createServer(serverConfig, candidateConfig);
 

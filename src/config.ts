@@ -3,6 +3,8 @@ import axios from 'axios';
 import pdfParse from 'pdf-parse';
 import * as cheerio from 'cheerio';
 
+let candidateConfig: CandidateConfig | null = null;
+
 async function getTextFromUrl(url: string) {
   try {
     // Fetch the content from URL
@@ -58,7 +60,11 @@ function getServerConfig() {
 }
 
 async function getCandidateConfig() {
-  const candidateConfig = new CandidateConfig();
+  if (candidateConfig) {
+    return candidateConfig;
+  }
+
+  candidateConfig = new CandidateConfig();
   candidateConfig.name = 'Jake Gaylor';
   candidateConfig.resumeUrl = 'https://jakegaylor.com/resume/';
   candidateConfig.resumeText = await getTextFromUrl("https://jakegaylor.com/resume.json");

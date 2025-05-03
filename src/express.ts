@@ -1,15 +1,15 @@
 import express from 'express';
 import { statefulHandlers, sseHandlers } from 'express-mcp-handler';
 import { ServerFactory } from './types';
-import { candidateConfig } from './config';
 import path from 'path';
 import fs from 'fs';
 import nunjucks from 'nunjucks';
 import { v4 as uuidv4 } from 'uuid';
+import { CandidateConfig } from "@jhgaylor/candidate-mcp-server";
 
 // TODO: add well known for mcp
 // TODO: maybe add an a2a card?
-function startHTTPServer(serverFactory: ServerFactory, port: number) {
+function startHTTPServer(candidateConfig: CandidateConfig, serverFactory: ServerFactory, port: number) {
   const app = express();
   app.use(express.json());
   app.use(express.static(path.join(process.cwd(), 'public')));
